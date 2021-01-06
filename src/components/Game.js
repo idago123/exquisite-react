@@ -5,6 +5,9 @@ import FinalPoem from './FinalPoem';
 import RecentSubmission from './RecentSubmission';
 
 const Game = () => {
+  // create state variable to collect all lines of poetry, call back should live in game level, then pass callback to playersubmissionform
+  const [sentenceList, setSentenceList] = useState([])
+
   const exampleFormat = FIELDS.map((field) => {
     if (field.key) {
       return field.placeholder;
@@ -13,6 +16,16 @@ const Game = () => {
     }
   }).join(' ');
 
+  const addSentenceNew = (sentence) => {
+    const newSentenceList = [...sentenceList, sentence];
+
+    // const nextId = Math.max(...newSentenceList.map((sentence) => sentence.id)) + 1
+    // newSentenceList.push({
+    //   ...sentence,
+    //   id: nextId
+    // })
+    setSentenceList(newSentenceList)
+    }
   return (
     <div className="Game">
       <h2>Game</h2>
@@ -27,7 +40,7 @@ const Game = () => {
 
       <RecentSubmission />
 
-      <PlayerSubmissionForm />
+      <PlayerSubmissionForm fields= {FIELDS} sendSubmission={addSentenceNew} index={sentenceList.length + 1}/>
 
       <FinalPoem />
 
