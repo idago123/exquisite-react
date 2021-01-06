@@ -5,7 +5,6 @@ import Game from './Game.js';
 import './PlayerSubmissionForm.css';
 
 const PlayerSubmissionForm = (props) => {
-  // console.log(props)
 // create state variables
 // create event handler function to change values
   const generateEmptySentence = () => {
@@ -16,26 +15,17 @@ const PlayerSubmissionForm = (props) => {
         emptyObject[field.key] = ''
       }
     }
-    // console.log(emptyObject)
     return emptyObject
     
   }
 
 const [sentence, setSentence] = useState(
   generateEmptySentence()
-  // adj1: '',
-  // noun1: '',
-  // adv: '',
-  // verb: '',
-  // adj2: '',
-  // noun2: '',
 )
 
 
 
 const onInputChange = (event) => {
-  // console.log(`Changing field ${ event.target.name } to ${ event.target.value }`);
-
   const {name, value} = event.target; // creating variables called name and value and finding the fields with the same name in event.target 
   const newSentence = {
     ...sentence,
@@ -47,7 +37,6 @@ const onInputChange = (event) => {
 
 const onFormSubmit = (event) => {
   event.preventDefault();
-  // console.log('submitting form')
   
   // if (sentence.adj1 !== '' && sentence.noun1 !== '' && sentence.adv !== ''
   //     && sentence.verb !== '' && sentence.adj2 !== '' && sentence.noun2 !== '') {

@@ -20,11 +20,6 @@ const Game = () => {
   const addSentenceNew = (words) => {
     const sentence = `The ${words.adj1} ${words.noun1} ${words.adv} ${words.verb} the ${words.adj2} ${words.noun2} .`
     const newSentenceList = [...sentenceList, sentence];
-    // const nextId = Math.max(...newSentenceList.map((sentence) => sentence.id)) + 1
-    // newSentenceList.push({
-    //   ...sentence,
-    //   id: nextId
-    // })
     setSentenceList(newSentenceList)
     }
 

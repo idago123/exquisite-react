@@ -4,14 +4,6 @@ import './FinalPoem.css';
 
 const FinalPoem = (props) => {
 
-const poem = () => {
-if (props.revealPoem) {
-    for (const sentence of props.submissions) {
-    return sentence
-    }
-  }
-}
-
   return (
     <div className="FinalPoem">
       { props.isSubmitted ? ( 
